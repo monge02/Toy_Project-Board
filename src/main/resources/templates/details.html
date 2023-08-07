@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>게 시 판</h2>
+    </div>
+
+        <div>
+            <label for="userName">닉네임</label>
+            <input type="text" id="userName" name="userName" class="form-control" value="몽이" th:value="${board.userName}" readonly>
+        </div>
+        <div>
+            <label for="title">제 목</label>
+            <input type="text" id="title" name="title" class="form-control" value="배고프다" th:value="${board.title}" readonly>
+        </div>
+        <div>
+            <label for="content">내 용</label>
+            <textarea id="content" name="content" class="form-control" value="집사야 간식주라"
+                      th:value="${board.content}" th:text="${board.content}" readonly></textarea>
+        </div>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" onclick="location.href='editForm.html'"
+                        th:onclick="|location.href='@{/board/list/{boardId}/edit(boardId=${board.id})}'|" type="button">수정</button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg" onclick="location.href='list.html'"
+                        th:onclick="|location.href='@{/board/list}'|" type="button">목록으로</button>
+            </div>
+        </div>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>

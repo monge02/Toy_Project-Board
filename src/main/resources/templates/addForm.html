@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>게 시 판</h2>
+    </div>
+    <h4 class="mb-3">글쓰기</h4>
+    <form action="details.html" th:action method="post">
+        <div>
+            <label for="userName">닉네임</label>
+            <input type="text" id="userName" name="userName" class="form-control" placeholder="닉네임을 입력하세요">
+        </div>
+        <div>
+            <label for="title">제 목</label>
+            <input type="text" id="title" name="title" class="form-control" placeholder="제목을 입력하세요">
+        </div>
+        <div>
+            <label for="content">내 용</label>
+            <textarea id="content" name="content" class="form-control" placeholder="내용을 입력하세요"></textarea>
+        </div>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">등록</button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='list.html'"
+                        th:onclick="|location.href='@{/board/list}'|" type="button">취소</button>
+            </div>
+        </div>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
