@@ -1,6 +1,5 @@
 # Toy_Project-Board v0.1
-
-
+Thymeleaf, Spring boot, Mybatis, H2 Database를 활용
  ## 기능 구현
  - 게시글 목록 / 등록 / 수정기능
  - 제목, 닉네임으로 서치기능
